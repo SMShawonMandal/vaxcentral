@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import fb1 from '../assets/facebook.svg'
+import gm1 from '../assets/gmail.svg'
 
 function Footer() {
   return (
@@ -24,8 +26,8 @@ function Footer() {
         <nav>
           <h6 className="footer-title">Social</h6>
           <div className="grid grid-flow-col gap-4">
-          <Link to='/'><img src="/src/assets/facebook.svg" className='h-10 w-10'/></Link>
-        <Link to='/'><img src="/src/assets/gmail.svg" className='h-10 w-10'/></Link>
+          <Link to='/'><img src={fb1} className='h-10 w-10'/></Link>
+        <Link to='/'><img src={gm1} className='h-10 w-10'/></Link>
           </div>
         </nav>
       </footer>

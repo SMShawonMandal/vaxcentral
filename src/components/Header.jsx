@@ -75,7 +75,7 @@ function Header() {
                     <Link to='/'>
                         <div className='flex w-full items-center justify-start gap-4'>
                             <img src={logo} />
-                            <h1 className=' text-3xl'>VaxCentral</h1>
+                            <h1 className=' text-3xl lg:flex md:flex hidden'>VaxCentral</h1>
                         </div>
                     </Link>
 

@@ -11,11 +11,13 @@ import Signup from "../pages/Signup";
 import Contact from "../pages/Contact";
 import Faq from "../pages/Faq";
 import Secondary from "../layout/Secondary";
+import Error from "../pages/Error";
 export const router = createBrowserRouter([
     {
 
         path: "/",
         element: <Main />,
+        errorElement: <Error />,
         children: [
             {
                 path: "/",
@@ -39,6 +41,7 @@ export const router = createBrowserRouter([
 
         path: "/",
         element: <Secondary />,
+        errorElement: <Error />,
         children: [
             {
                 path: "/login",
