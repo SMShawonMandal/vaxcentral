@@ -1,8 +1,14 @@
 import React from 'react'
+import SectionBanner from '../components/SectionBanner'
+import ContactForm from '../components/ContactForm'
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <SectionBanner names='Contact' />
+      <ContactForm />
+    </div>
+
   )
 }
 
