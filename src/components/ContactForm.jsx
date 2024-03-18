@@ -14,7 +14,6 @@ function ContactForm() {
                         {/* div for name and email */}
 
                         <div className='flex gap-4 w-full justify-center '>
-
                             <input type="text" className="text-gray-700 border rounded bg-[#DCF0FA] py-3 px-4 leading-tight focus:outline-none border-none lg:h-[50px] md:h-[50px] h-[40px] lg:w-[30%] md:w-[30%] w-[40%] focus:outline-[#2F6E89]" placeholder="Name" />
 
                             <input type="email" className="text-gray-700 border rounded bg-[#DCF0FA] py-3 px-4 leading-tight focus:outline-none border-none lg:h-[50px] md:h-[50px] h-[40px] lg:w-[30%] md:w-[30%] w-[40%] focus:outline-[#2F6E89]" placeholder="Email" />
@@ -27,7 +26,6 @@ function ContactForm() {
                             <input type="text" className="text-gray-700 border rounded bg-[#DCF0FA] py-3 px-4 leading-tight focus:outline-none border-none lg:h-[50px] md:h-[50px] h-[40px] lg:w-[30%] md:w-[30%] w-[40%] focus:outline-[#2F6E89]" placeholder="Phone Number" />
 
                             <input type="text" className="text-gray-700 border rounded bg-[#DCF0FA] py-3 px-4 leading-tight focus:outline-none border-none lg:h-[50px] md:h-[50px] h-[40px] lg:w-[30%] md:w-[30%] w-[40%] focus:outline-[#2F6E89]" placeholder="Subject" />
-
 
                         </div>
 

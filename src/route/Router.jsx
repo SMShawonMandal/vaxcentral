@@ -12,6 +12,11 @@ import Contact from "../pages/Contact";
 import Faq from "../pages/Faq";
 import Secondary from "../layout/Secondary";
 import Error from "../pages/Error";
+import UserDashboard from "../pages/User/UserDashboard";
+import Children from "../pages/User/Children";
+import Third from "../layout/Third";
+import RegisterNew from "../pages/User/RegisterNew";
+import UserProfile from "../pages/User/UserProfile";
 export const router = createBrowserRouter([
     {
 
@@ -52,6 +57,30 @@ export const router = createBrowserRouter([
                 element: <Signup />,
             },
         ],
+    },
+    {
+        path: '/',
+        element: <Third />,
+        children: [
+            {
+                path: "/userdashboard" ,
+                element: <UserDashboard />,
+            },
+            {
+                path: "/children" ,
+                element: <Children />,
+            },
+            {
+                path: "/registernewvaccine" ,
+                element: <RegisterNew />,
+            },
+            {
+                path: "/profile" ,
+                element: <UserProfile />,
+            },
+
+        ]
+        
     },
     
 ]);
