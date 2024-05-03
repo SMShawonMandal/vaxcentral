@@ -17,6 +17,7 @@ import Children from "../pages/User/Children";
 import Third from "../layout/Third";
 import RegisterNew from "../pages/User/RegisterNew";
 import UserProfile from "../pages/User/UserProfile";
+import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
     {
 
@@ -64,19 +65,19 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/userdashboard" ,
-                element: <UserDashboard />,
+                element: <PrivateRoute><UserDashboard /></PrivateRoute>,
             },
             {
                 path: "/children" ,
-                element: <Children />,
+                element: <PrivateRoute><Children /></PrivateRoute>,
             },
             {
                 path: "/registernewvaccine" ,
-                element: <RegisterNew />,
+                element: <PrivateRoute><RegisterNew /></PrivateRoute>,
             },
             {
                 path: "/profile" ,
-                element: <UserProfile />,
+                element: <PrivateRoute><UserProfile /></PrivateRoute>,
             },
 
         ]

@@ -1,0 +1,165 @@
+[
+    {
+      "_id": "65fc00799759f1f5c6342e78",
+      "fullName": "Shawon Mandal",
+      "nidNumber": "1111111111",
+      "mobileNumber": "01954495275",
+      "dob": "2024-03-10"
+    },
+    {
+      "_id": "65fc01cf0d566ff37b0b140c",
+      "fullName": "Shawon Mandal",
+      "nidNumber": "11111111112",
+      "mobileNumber": "01954495275",
+      "dob": "2024-03-10"
+    },
+    {
+      "_id": "65fc05590d566ff37b0b140d",
+      "fullName": "Shawon Mandal Partho",
+      "nidNumber": "11111111113",
+      "mobileNumber": "01703818652",
+      "dob": "2000-04-23"
+    },
+    {
+      "_id": "65fc057f0d566ff37b0b140e",
+      "fullName": "Shawon Mandal Partho",
+      "nidNumber": "11111111114",
+      "mobileNumber": "01703818652",
+      "dob": "2000-04-23"
+    },
+    {
+      "_id": "65fc07320d566ff37b0b140f",
+      "fullName": "Shawon Mandal",
+      "nidNumber": "11111111117",
+      "mobileNumber": "01954495275",
+      "dob": "2024-03-04"
+    },
+    {
+      "_id": "65fc0d05b026d1051bbf8ebe",
+      "fullName": "loki",
+      "nidNumber": "1234564789",
+      "mobileNumber": "01841888080",
+      "dob": "2000-02-28",
+      "password": "$h@w0nMandal"
+    },
+    {
+      "_id": "65fc1282b026d1051bbf8ebf",
+      "fullName": "Shawon Mandal",
+      "nidNumber": "456456456",
+      "mobileNumber": "456456456",
+      "dob": "2024-03-05",
+      "password": "456456456"
+    },
+    {
+      "_id": "65fc14ceb026d1051bbf8ec0",
+      "fullName": "siadjyfgoiudf",
+      "nidNumber": "6541651651",
+      "mobileNumber": "95416541561",
+      "dob": "2024-03-05",
+      "password": "sdgfsdfgsdfgU1$"
+    },
+    {
+      "_id": "65fc2be945a0ca3b998f7e83",
+      "fullName": "stsertsert",
+      "nidNumber": "161651651561",
+      "mobileNumber": "45665156151",
+      "dob": "2024-03-18",
+      "password": "P@rth0P@rth0"
+    },
+    {
+      "_id": "65fc728702da9c3872a4cc89",
+      "fullName": "Joujoniki",
+      "nidNumber": "65214312342",
+      "mobileNumber": "345327534",
+      "dob": "2000-03-30",
+      "password": "Joujoniki@1"
+    },
+    {
+      "_id": "662e233bb3b70424cd58e2ea",
+      "fullName": "Joujoniki Asa Roy",
+      "nidNumber": "23453453534",
+      "mobileNumber": "01745743534",
+      "dob": "2000-04-24",
+      "password": "Joujoniki@1"
+    },
+    {
+      "_id": "66311d380523bbf72441ba40",
+      "fullName": "Thor Odinson",
+      "nidNumber": "159951159951",
+      "mobileNumber": "00000000000",
+      "dob": "2000-04-01",
+      "password": "$h@w0nMandal"
+    },
+    {
+      "_id": "6631207fb736a21a623ffdf3",
+      "userId": "0bb76eab-c461-4147-91bb-f1c9b8f99934",
+      "fullName": "hello",
+      "nidNumber": "456654456654",
+      "mobileNumber": "4862486248624",
+      "dob": "2000-12-01",
+      "password": "$h@w0nMandal"
+    },
+    {
+      "_id": "66312686923ea0937685f7ec",
+      "user_Id": null,
+      "fullName": "jkhgasdfkjhgzdfsggkjg",
+      "nidNumber": "2454365413568451",
+      "mobileNumber": "25346541654132541",
+      "dob": "2000-01-04",
+      "password": "$h@w0nMandal"
+    },
+    {
+      "_id": "663127e62bf81c917a55ab00",
+      "userId": "0bb76eab-c461-4147-91bb-f1c9b8f999341",
+      "fullName": "ikjuhgsdfgjhg",
+      "nidNumber": "654635844716",
+      "mobileNumber": "5460145684",
+      "dob": "2001-01-01",
+      "password": "$h@w0nMandal"
+    },
+    {
+      "_id": "663135e38f103632d2efbe42",
+      "userId": null,
+      "fullName": "Nibedita roy",
+      "nidNumber": "543653425634725",
+      "mobileNumber": "623452365423",
+      "dob": "2000-02-26",
+      "password": "Joujonikiasa@123"
+    },
+    {
+      "_id": "663137a1eeb4525e34100807",
+      "userId": "0bb76eab-c461-4147-91bb-f1c9b8f9993411",
+      "fullName": "Nabila",
+      "nidNumber": "57438534656",
+      "mobileNumber": "6542366537",
+      "dob": "1999-12-03",
+      "password": "Joujoniki@121"
+    },
+    {
+      "_id": "663137e386d43e936cba90b6",
+      "userId": "0bb76eab-c461-4147-91bb-f1c9b8f99934111",
+      "fullName": "Nabila",
+      "nidNumber": "57438534656",
+      "mobileNumber": "6542366537",
+      "dob": "1999-12-03",
+      "password": "Joujoniki@121"
+    },
+    {
+      "_id": "6631394024dd1cb971897679",
+      "userId": 19,
+      "fullName": "dfgvdfgfdg",
+      "nidNumber": "634578934543",
+      "mobileNumber": "7586345345",
+      "dob": "2000-05-30",
+      "password": "Joujoniki@1"
+    },
+    {
+      "_id": "6631396824dd1cb97189767a",
+      "userId": 20,
+      "fullName": "fdgsdgdf",
+      "nidNumber": "463535353456",
+      "mobileNumber": "36254325635",
+      "dob": "2024-05-14",
+      "password": "Joujoniki@1"
+    }
+  ]

@@ -1,11 +1,34 @@
-import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom';
+import React, { useContext } from 'react'
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import LoginHeader from './LoginHeader';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
+import { CgMenuGridO } from "react-icons/cg";
+import { FiAlignLeft } from "react-icons/fi";
+
 
 function DashBoardDrawer() {
+    const navigate = useNavigate()
+    const { logout } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
+    const handleLogout = async () => {
+        logout()
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Logged Out",
+            showConfirmButton: false,
+            timer: 2000
+        });
+        navigate('/');
+        window.location.reload()
+    }
+
     const dashboardlinks = <>
 
-        <div className='flex flex-col '>
+        <div className='flex flex-col p-4 gap-4 '>
+            <h2 className='pb-6 font-bold text-xl'>Links</h2>
             <NavLink
                 to="/userdashboard"
                 style={({ isActive }) => {
@@ -54,14 +77,16 @@ function DashBoardDrawer() {
                         fontSize: isActive ? "16px" : "16px",
                     };
                 }}
-                className='pt-2 text-center mr-2 flex justify-start'
+                className='pt-2 text-center mr-2 flex justify-start pb-20'
             >
                 Profile
             </NavLink>
         </div>
     </>
+
+
     const otherlinks = <>
-        <div className='flex flex-col '>
+        <div className='flex flex-col p-4 gap-4 '>
             <h2 className='pb-6 font-bold text-xl'>Others</h2>
             <NavLink
                 to="/"
@@ -128,46 +153,71 @@ function DashBoardDrawer() {
             >
                 Setting
             </NavLink>
-            <NavLink
-                to="#"
-                style={({ isActive }) => {
-                    return {
-                        color: isActive ? "black" : "black",
-                        fontWeight: isActive ? "bold" : "normal",
-                        fontSize: isActive ? "16px" : "16px",
-                    };
-                }}
-                className='pt-2 text-center mr-2 flex justify-start'
-            >
-                Logout
-            </NavLink>
+            <div className='pt-2 text-[16px] text-black'>
+                <button onClick={handleLogout}>
+                    Logout
+                </button>
+            </div>
         </div>
+
     </>
     return (
 
-        <div className='flex flex-row'>
-            <div className='h-screen lg:flex lg:flex-col gap-20 lg:w-[300px]  bg-[#CDE5F1] fixed'>
-                <div className='flex lg:w-full pt-8 font-semibold text-xl justify-center'>
-                    Shawon Mandal
-                </div>
-                <div className='pl-8 flex justify-start'>
-                    {dashboardlinks}
-                </div>
-                <div className='w-full flex justify-center'>
-                    <div className='w-[80%] divider divider-neutral'>
+        <div>
+            <div className="drawer">
+                <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content flex items-center justify-between bg-[#e0f2fa]">
+                    {/* Page content here */}
+                    <label htmlFor="my-drawer"><FiAlignLeft className=' text-3xl m-7 hover:cursor-pointer' /></label>
 
-                    </div>
+                    {/* <h1 className='text-3xl font-bold p-7'>Vaccine Management System</h1> */}
+                    <p className='p-7 font-bold text-xl'>{user?.fullName} <br /> Id No:  {user?.userId}</p>
                 </div>
-                <div className='pl-8 flex justify-start'>
-                    {otherlinks}
+
+
+                <div className="drawer-side">
+                    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                        {/* Sidebar content here */}
+                        {dashboardlinks}
+                        {otherlinks}
+
+                    </ul>
                 </div>
 
             </div>
-            <div className='flex-1 h-screen ml-[300px] '>
-                    <LoginHeader />
-                    <Outlet />
+
+            
+            <div className="w-full h-full">
+                <Outlet />
             </div>
         </div>
+
+
+        // <div className='flex flex-row'>
+        //     {/* changes needed here to handle medium and small devicerelatives */}
+        //     <div className='h-screen md:flex md:flex-col lg:flex lg:flex-col gap-8 lg:w-[300px]  bg-[#CDE5F1] fixed hidden'>
+        //         <div className='flex lg:w-full pt-8 font-semibold text-xl justify-center'>
+        //             {user?.fullName}
+        //         </div>
+        //         <div className='pl-8 flex justify-start'>
+        //             {dashboardlinks}
+        //         </div>
+        //         <div className='w-full flex justify-center'>
+        //             <div className='w-[80%] divider divider-neutral'>
+
+        //             </div>
+        //         </div>
+        //         <div className='pl-8 flex justify-start'>
+        //             {otherlinks}
+        //         </div>
+
+        //     </div>
+        //     <div className='flex-1 h-screen ml-0 md:ml-[191px] lg:ml-[300px]'>
+        //         <LoginHeader />
+        //         <Outlet />
+        //     </div>
+        // </div>
     )
 }
 

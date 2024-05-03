@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../assets/logo.svg'
 import { Link, NavLink } from 'react-router-dom'
+import { AuthContext } from '../provider/AuthProvider'
 
 function Header() {
+    const { user } = useContext(AuthContext)
     const navbarlink = <>
         <NavLink
             to="/"
@@ -59,6 +61,22 @@ function Header() {
         >
             FAQ
         </NavLink>
+        {
+            user && <NavLink
+            to="/userdashboard"
+            style={({ isActive, isPending, isTransitioning }) => {
+                return {
+                    color: isActive ? "#4FB2E5" : "black",
+
+                    borderBottom: isActive ? "2px solid #4FB2E5 " : "",
+                    width: 40,
+                };
+            }}
+            className='pt-2 text-center  mr-2'
+        >
+            Dashboard
+        </NavLink>
+        }
     </>
     return (
         <div className="navbar bg-[#e0f2fa] p-4">
@@ -87,10 +105,16 @@ function Header() {
                     {navbarlink}
                 </ul>
             </div>
-            <div className="navbar-end gap-2">
-                <Link to='/signup' className='btn btn-sm bg-[#4FB2E5] text-white hover:bg-[#4FB2E5]'>Sign Up</Link>
-                <Link to='/login' className='btn btn-sm bg-[#4FB2E5] text-white hover:bg-[#4FB2E5]'>Login</Link>
-            </div>
+            {
+                <div className="navbar-end gap-2">
+                    {
+                        user ? <><h4 className='text-lg font-bold'>{user?.fullName}</h4></> : <>
+                            <Link to='/signup' className='btn btn-sm bg-[#4FB2E5] text-white hover:bg-[#4FB2E5]'>Sign Up</Link>
+                            <Link to='/login' className='btn btn-sm bg-[#4FB2E5] text-white hover:bg-[#4FB2E5]'>Login</Link>
+                        </>
+                    }
+                </div>
+            }
         </div>
     )
 }
