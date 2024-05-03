@@ -164,7 +164,7 @@ function DashBoardDrawer() {
     return (
 
         <div>
-            <div className="drawer">
+            <div className="drawer z-50">
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex items-center justify-between bg-[#e0f2fa]">
                     {/* Page content here */}
@@ -192,32 +192,6 @@ function DashBoardDrawer() {
                 <Outlet />
             </div>
         </div>
-
-
-        // <div className='flex flex-row'>
-        //     {/* changes needed here to handle medium and small devicerelatives */}
-        //     <div className='h-screen md:flex md:flex-col lg:flex lg:flex-col gap-8 lg:w-[300px]  bg-[#CDE5F1] fixed hidden'>
-        //         <div className='flex lg:w-full pt-8 font-semibold text-xl justify-center'>
-        //             {user?.fullName}
-        //         </div>
-        //         <div className='pl-8 flex justify-start'>
-        //             {dashboardlinks}
-        //         </div>
-        //         <div className='w-full flex justify-center'>
-        //             <div className='w-[80%] divider divider-neutral'>
-
-        //             </div>
-        //         </div>
-        //         <div className='pl-8 flex justify-start'>
-        //             {otherlinks}
-        //         </div>
-
-        //     </div>
-        //     <div className='flex-1 h-screen ml-0 md:ml-[191px] lg:ml-[300px]'>
-        //         <LoginHeader />
-        //         <Outlet />
-        //     </div>
-        // </div>
     )
 }
 

@@ -7,6 +7,8 @@ function Tablerow({ index, vaccine }) {
     const { user } = useContext(AuthContext)
     console.log(user)
     const registeredVaccines = { name: user.fullName, phonenumber: user.mobileNumber, nid: user.nidNumber, disease_name: vaccine.disease_name, total_doses: vaccine.total_dose_number, completed_doses: 0, status: 'ongoing' }
+
+
     function handleRegistration(v) {
         Swal.fire({
             title: ` Want to register for ${v.disease_name} vaccine? `,
@@ -25,10 +27,19 @@ function Tablerow({ index, vaccine }) {
                             text: "Vaccine has been registered.",
                             icon: "success"
                         });
+
+                        window.location.reload();
                     })
                     .catch((error) => {
-                        console.log(error)
-                    })
+                        if (error.response.status === 400) {
+                            Swal.fire({
+                                title: "Already Registered",
+                                icon: "error"
+                            });
+                        } else {
+                            console.log(error);
+                        }
+                    });
 
 
             }
