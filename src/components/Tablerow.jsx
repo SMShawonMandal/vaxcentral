@@ -25,10 +25,12 @@ function Tablerow({ index, vaccine }) {
                         Swal.fire({
                             title: "Registered!",
                             text: "Vaccine has been registered.",
-                            icon: "success"
+                            icon: "success",
+                            timer: 1500,
+                            willClose: () => {window.location.reload(); }
                         });
 
-                        window.location.reload();
+                        // window.location.reload();
                     })
                     .catch((error) => {
                         if (error.response.status === 400) {
@@ -44,7 +46,10 @@ function Tablerow({ index, vaccine }) {
 
             }
         });
+        
     }
+    
+    
     return (
         <tr>
             <th className='text-center  text-[16px]'> {index + 1} </th>

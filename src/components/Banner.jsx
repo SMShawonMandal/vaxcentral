@@ -7,6 +7,7 @@ import { AuthContext } from '../provider/AuthProvider';
 
 
 function Banner() {
+    
     const { user } = useContext(AuthContext)
     return (
         <div className="lg:h-[60vh] md:h-[60vh] sm:h-[50vh] h-[60vh] w-full  px-[10vw] flex  items-center justify-center  md:flex-row lg:flex-row flex-col-reverse bg-gradient-to-b from-[#e0f2fa] to-white">

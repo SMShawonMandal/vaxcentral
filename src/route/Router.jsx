@@ -18,6 +18,7 @@ import Third from "../layout/Third";
 import RegisterNew from "../pages/User/RegisterNew";
 import UserProfile from "../pages/User/UserProfile";
 import PrivateRoute from "./PrivateRoute";
+import EmployeeLogin from "../pages/EmployeeLogin";
 export const router = createBrowserRouter([
     {
 
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
                 path: "/signup",
                 element: <Signup />,
             },
+            {
+                path: "/employeeLogin",
+                element: <EmployeeLogin />,
+            }
         ],
     },
     {

@@ -12,7 +12,7 @@ import CompletedTableRow from '../../components/CompletedTableRow';
 function UserDashboard() {
 
     const [vaccines, setVaccines] = useState([])
-    const [ongoing, setOngoing] = useState([])
+    const [ongoingVaccines, setOngoingVaccines] = useState([])
     const [completed, setCompleted] = useState([])
     const user = useContext(AuthContext);
 
@@ -34,7 +34,7 @@ function UserDashboard() {
         axios.get('http://localhost:5001/api/ongoing')
             .then((response) => {
                 // console.log(response.data.data)
-                setOngoing(response.data.data)
+                setOngoingVaccines(response.data.data)
             })
             .catch((error) => {
                 console.log('ami error:', error.response.data);
@@ -83,6 +83,10 @@ function UserDashboard() {
 
     console.log(filteredVaccines);
 
+    const userOngoing =  ongoingVaccines.filter(vaccine => vaccine.nid === user?.user.nidNumber);
+
+    
+
 
     return (
         <div className='h-full mb-16 bg-gradient-to-b from-[#e0f2fa] to-white flex flex-col lg:gap-28 md:gap-20 gap-12 pt-12 items-center'>
@@ -101,7 +105,7 @@ function UserDashboard() {
                             </tr>
                         </thead>
                         <tbody>
-                            {ongoing.map((ongoing, index) => <OngoingTableRow key={ongoing._id} index={index} ongoing={ongoing} />)}
+                            {userOngoing.map((ongoing, index) => <OngoingTableRow key={ongoing._id} index={index} ongoing={ongoing} />)}
                         </tbody>
                     </table>
 
