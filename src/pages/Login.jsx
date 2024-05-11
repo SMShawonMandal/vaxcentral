@@ -15,11 +15,6 @@ function Login() {
     console.log(mobileNumber, password)
 
     try {
-      // Make a POST request to your backend to authenticate user
-      // const response = await axios.post('http://localhost:5001/api/login', {
-      //   mobileNumber,
-      //   password,
-      // });
       axios.post('http://localhost:5001/api/login', {
         mobileNumber,
         password,
