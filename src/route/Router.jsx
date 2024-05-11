@@ -19,6 +19,8 @@ import RegisterNew from "../pages/User/RegisterNew";
 import UserProfile from "../pages/User/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import EmployeeLogin from "../pages/EmployeeLogin";
+import EmployeeRoute from "./EmployeeRoute";
+import EmployeeDashboard from "../pages/EmployeeDashboard";
 export const router = createBrowserRouter([
     {
 
@@ -90,7 +92,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/",
-        element: <Fourth />,
+        // element: <Fourth />,
         errorElement: <Error />,
         children: [
             {
