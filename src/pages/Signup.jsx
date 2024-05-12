@@ -11,6 +11,9 @@ function Signup() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate()
   const [error, setError] = useState('');
+  // const [designation, setDesignation] = useState('');
+  
+  const designation = "user";
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
@@ -35,7 +38,8 @@ function Signup() {
           nidNumber,
           mobileNumber,
           dob,
-          password
+          password,
+          designation
         });
         console.log('Response:', response.data);
         Swal.fire({
@@ -67,42 +71,9 @@ function Signup() {
 
     setPassword(password);
 
-    console.log(fullName, nidNumber, mobileNumber, dob)
+    console.log(fullName, nidNumber, mobileNumber, dob,designation)
 
-    // try {
-    //   // Make POST request to your backend endpoint
-    //   const response = await axios.post('http://localhost:5001/api/signup', {
-    //     fullName,
-    //     nidNumber,
-    //     mobileNumber,
-    //     dob,
-    //     password
-    //   });
-    //   console.log('Response:', response.data);
-    //   Swal.fire({
-    //     position: "top-end",
-    //     icon: "success",
-    //     title: "Successfully registered",
-    //     showConfirmButton: false,
-    //     timer: 2000
-    //   });
-
-    //   navigate('/login');
-
-
-    //   // Log response from server
-    //   // Clear form fields or show success message as needed
-    // } catch (error) {
-    //   console.error('Error:', error.response.data); // Log any errors
-    //   // Handle error (show error message, etc.)
-    //   Swal.fire({
-    //     title: error.response.data,
-    //     // text: "That thing is still around?",
-    //     icon: "error",
-    //     timer: 3000,
-    //     showConfirmButton: false,
-    //   });
-    // }
+  
   };
 
   return (

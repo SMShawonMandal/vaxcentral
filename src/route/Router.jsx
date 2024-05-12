@@ -18,8 +18,6 @@ import Third from "../layout/Third";
 import RegisterNew from "../pages/User/RegisterNew";
 import UserProfile from "../pages/User/UserProfile";
 import PrivateRoute from "./PrivateRoute";
-import EmployeeLogin from "../pages/EmployeeLogin";
-import EmployeeRoute from "./EmployeeRoute";
 import EmployeeDashboard from "../pages/EmployeeDashboard";
 export const router = createBrowserRouter([
     {
@@ -60,10 +58,6 @@ export const router = createBrowserRouter([
                 path: "/signup",
                 element: <Signup />,
             },
-            {
-                path: "/employeeLogin",
-                element: <EmployeeLogin />,
-            }
         ],
     },
     {
@@ -86,20 +80,12 @@ export const router = createBrowserRouter([
                 path: "/profile" ,
                 element: <PrivateRoute><UserProfile /></PrivateRoute>,
             },
-
+            {
+                path: "/employeedashboard" ,
+                element: <PrivateRoute><EmployeeDashboard /></PrivateRoute>,
+            }
         ]
         
     },
-    {
-        path: "/",
-        // element: <Fourth />,
-        errorElement: <Error />,
-        children: [
-            {
-                path: "/EmployeeDashboard",
-                element: <EmployeeRoute><EmployeeDashboard /></EmployeeRoute>,
-            }
-        ]
-    }
     
 ]);

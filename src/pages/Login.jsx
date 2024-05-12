@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
+
+
 
 function Login() {
   const [mobileNumber, setmobileNumber] = useState('');
@@ -10,26 +13,38 @@ function Login() {
   const navigate = useNavigate()
   const { login } = useContext(AuthContext)
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(mobileNumber, password)
 
     try {
-      axios.post('http://localhost:5001/api/login', {
+      await axios.post('http://localhost:5001/api/login', {
         mobileNumber,
         password,
       })
         .then((response) => {
           // console.log(response.data.data)
           login(response.data)
+          console.log(response.data)
           if (response.data) {
+
             Swal.fire({
               icon: 'success',
               title: 'Login successful',
               showConfirmButton: false,
               timer: 1500
             });
-            navigate('/userdashboard');
+            if (response.data.userData.designation === 'user') {
+
+              navigate('/userdashboard');
+            }
+
+            else if (response.data.userData.designation === 'Employee') {
+              navigate('/employeeDashboard');
+
+            }
+
           }
         })
         .catch((error) => {
@@ -74,11 +89,6 @@ function Login() {
         <div className='flex gap-2 justify-center'>
           <p> New User? </p>
           <Link to="/signup"> <p className='hover:underline hover:text-blue-500'>Sign Up</p></Link>
-
-        </div>
-        <div className='flex gap-2 justify-center'>
-          <p> Employee ?</p>
-          <Link to="/employeelogin"> <p className='hover:underline hover:text-blue-500'>Log in</p></Link>
         </div>
       </div>
     </div>

@@ -89,51 +89,56 @@ function UserDashboard() {
 
 
     return (
-        <div className='h-full mb-16 bg-gradient-to-b from-[#e0f2fa] to-white flex flex-col lg:gap-28 md:gap-20 gap-12 pt-12 items-center'>
+        <div className='h-full bg-gradient-to-b from-[#e0f2fa] to-white flex flex-col lg:gap-28 md:gap-20 gap-12 items-center pt-12'>
             <div className='w-full h-full flex gap-[6vw] justify-center items-center lg:items-start md:items-start lg:flex-row md:flex-row flex-col'>
-                <div className='lg:w-[43%] md:w-[43%] w-[90%] max-h-[380px]  rounded-2xl overflow-x-auto overflow-y-auto '>
-                <h1 className='text-center text-3xl font-bold pb-10'>Registered Vaccine</h1>
-                    <table className="table table-zebra bg-[#9daab1]">
-                        {/* head */}
-                        <thead>
-                            <tr>
-                                <th className='text-center text-[16px] font-bold text-black' > SL </th>
-                                <th className='text-center  text-[16px] font-bold text-black'> Name</th>
-                                <th className='text-center  text-[16px] font-bold text-black'>Next Dose</th>
-                                <th className='text-center  text-[16px] font-bold text-black'>Date</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {userOngoing.map((ongoing, index) => <OngoingTableRow key={ongoing._id} index={index} ongoing={ongoing} />)}
-                        </tbody>
-                    </table>
+                <div className='lg:w-[43%] md:w-[43%] w-[90%] 2xl:h-[380px] lg:h-[280px] h-[320px] '>
+                    <h1 className='text-center 2xl:text-3xl lg:text-xl md:text-lg text-base font-bold pb-10'>Registered Vaccine</h1>
+                    <div className='h-full rounded-2xl overflow-x-auto overflow-y-auto '>
+                        <table className="table table-zebra bg-[#9daab1]">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th className='text-center text-[16px] font-bold text-black' > SL </th>
+                                    <th className='text-center  text-[16px] font-bold text-black'> Name</th>
+                                    <th className='text-center  text-[16px] font-bold text-black'>Next Dose</th>
+                                    <th className='text-center  text-[16px] font-bold text-black'>Date</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {userOngoing.map((ongoing, index) => <OngoingTableRow key={ongoing._id} index={index} ongoing={ongoing} />)}
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
-                <div className='lg:w-[43%] md:w-[43%] w-[90%] max-h-[380px]  rounded-2xl overflow-x-auto overflow-y-auto '>
-                <h1 className='text-center text-3xl font-bold pb-10'>Completed Vaccine</h1>
-                    <table className="table table-zebra bg-[#9daab1]">
-                        {/* head */}
-                        <thead>
-                            <tr>
-                                <th className='text-center text-[16px] font-bold text-black' > SL </th>
-                                <th className='text-center  text-[16px] font-bold text-black'> Name</th>
-                                <th className='text-center  text-[16px] font-bold text-black'>Date</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {completed.map((completed, index) => <CompletedTableRow key={completed._id} index={index} completed={completed} />)}
-                        </tbody>
-                    </table>
+                <div className='lg:w-[43%] md:w-[43%] w-[90%] 2xl:h-[380px] lg:h-[280px] h-[320px] '>
+                    <h1 className='text-center 2xl:text-3xl lg:text-xl md:text-lg text-base font-bold pb-10'>Completed Vaccine</h1>
+                    <div className='h-full overflow-x-auto overflow-y-auto rounded-2xl'>
+                        <table className="table table-zebra bg-[#9daab1]">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th className='text-center text-[16px] font-bold text-black' > SL </th>
+                                    <th className='text-center  text-[16px] font-bold text-black'> Name</th>
+                                    <th className='text-center  text-[16px] font-bold text-black'>Date</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {completed.map((completed, index) => <CompletedTableRow key={completed._id} index={index} completed={completed} />)}
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
 
             </div>
-            <div className='lg:w-[60%] w-[90%] max-h-[380px] overflow-x-auto overflow-y-auto rounded-2xl '>
+            <div className='lg:w-[60%] w-[90%] h-full pb-12'>
                 {/* show the data in the front end using map  */}
-                <h1 className='text-center text-3xl font-bold pb-10'>Suggested Vaccine</h1>
-                    <table className="table table-zebra bg-[#9daab1]">
+                <h1 className='text-center 2xl:text-3xl lg:text-xl md:text-lg text-base font-bold pb-10'>Suggested Vaccine</h1>
+                <div className='2xl:h-[380px] lg:h-[280px] h-[320px] overflow-x-auto overflow-y-auto rounded-2xl mb-12'>
+                    <table className="table table-zebra bg-[#9daab1] ">
                         {/* head */}
                         <thead>
                             <tr>
@@ -147,6 +152,7 @@ function UserDashboard() {
                             {filteredVaccines.map((vaccine, index) => <Tablerow key={vaccine._id} index={index} vaccine={vaccine} />)}
                         </tbody>
                     </table>
+                </div>
             </div>
 
 

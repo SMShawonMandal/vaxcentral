@@ -32,7 +32,7 @@ function AuthProvider({ children }) {
 
   // its a objecct which  is passing the functions and variables to use it globally as Authcontext value
 
-  const authValue = { isLoggedIn, login, logout, user: data?.existingUser, token: data?.token }
+  const authValue = { isLoggedIn, login, logout, user: data?.userData, token: data?.token }
 
   return (
     <AuthContext.Provider value={authValue}>
