@@ -35,7 +35,7 @@ function EmployeeHeader() {
                 </Link>
             </div>
             <div className='navbar-end pr-5'>
-                <button className='btn btn-secondary ' onClick={handleLogout}> Logout </button>
+                <button className='btn btn-sm btn-primary ' onClick={handleLogout}> Logout </button>
             </div>
         </div>
     )
