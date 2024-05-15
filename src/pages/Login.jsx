@@ -67,7 +67,7 @@ function Login() {
     <div className='h-screen w-full bg-gradient-to-b from-[#e0f2fa] to-white flex justify-center items-center'>
       <div className='space-y-8 lg:w-[552px] md:w-[400px] w-[350px] max-h-[790px]  bg-white shadow-xl px-12 py-20 rounded-xl'>
         <div>
-          <h1 className=' text-3xl font-bold text-center'>User Login </h1>
+          <h1 className=' text-3xl font-bold text-center'> Login </h1>
         </div>
         <form onSubmit={handleSubmit} className=''>
           <div className='flex flex-col gap-4 pb-10'>

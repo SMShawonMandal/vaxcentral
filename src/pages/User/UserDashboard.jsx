@@ -34,7 +34,7 @@ function UserDashboard() {
     useEffect(() => {
         axios.get(`http://localhost:5001/api/ongoing/${user?.user?.nidNumber}`)
             .then((response) => {
-                console.log("Ongoing",response.data.data)
+                console.log("Ongoing", response.data.data)
                 setOngoingVaccines(response.data.data)
             })
             .catch((error) => {
@@ -53,8 +53,6 @@ function UserDashboard() {
                 console.log('ami error:', error.response.data);
             });
     }, [])
-    
-
 
     // function tha takes the date of birth from date and calculate age
 
@@ -87,7 +85,6 @@ function UserDashboard() {
     // console.log(filteredVaccines);
 
 
-    
 
 
     return (

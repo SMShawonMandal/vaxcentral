@@ -55,32 +55,7 @@ function DashBoardDrawer() {
             >
                 Children
             </NavLink>
-            <NavLink
-                to="/registernewvaccine"
-                style={({ isActive }) => {
-                    return {
-                        color: isActive ? "black" : "black",
-                        fontWeight: isActive ? "bold" : "normal",
-                        fontSize: isActive ? "16px" : "16px",
-                    };
-                }}
-                className='pt-2 text-center mr-2 flex justify-start'
-            >
-                Register New Vaccine
-            </NavLink>
-            <NavLink
-                to="/profile"
-                style={({ isActive }) => {
-                    return {
-                        color: isActive ? "black" : "black",
-                        fontWeight: isActive ? "bold" : "normal",
-                        fontSize: isActive ? "16px" : "16px",
-                    };
-                }}
-                className='pt-2 text-center mr-2 flex justify-start pb-20'
-            >
-                Profile
-            </NavLink>
+            
         </div>
     </>
 
@@ -140,19 +115,7 @@ function DashBoardDrawer() {
             >
                 FAQ
             </NavLink>
-            <NavLink
-                to="/setting"
-                style={({ isActive }) => {
-                    return {
-                        color: isActive ? "black" : "black",
-                        fontWeight: isActive ? "bold" : "normal",
-                        fontSize: isActive ? "16px" : "16px",
-                    };
-                }}
-                className='pt-2 text-center mr-2 flex justify-start'
-            >
-                Setting
-            </NavLink>
+            
             <div className='pt-2 text-[16px] text-black'>
                 <button onClick={handleLogout}>
                     Logout

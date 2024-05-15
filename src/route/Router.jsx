@@ -15,8 +15,6 @@ import Error from "../pages/Error";
 import UserDashboard from "../pages/User/UserDashboard";
 import Children from "../pages/User/Children";
 import Third from "../layout/Third";
-import RegisterNew from "../pages/User/RegisterNew";
-import UserProfile from "../pages/User/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import EmployeeDashboard from "../pages/EmployeeDashboard";
 import Fourth from "../layout/Fourth";
@@ -73,14 +71,6 @@ export const router = createBrowserRouter([
             {
                 path: "/children" ,
                 element: <PrivateRoute><Children /></PrivateRoute>,
-            },
-            {
-                path: "/registernewvaccine" ,
-                element: <PrivateRoute><RegisterNew /></PrivateRoute>,
-            },
-            {
-                path: "/profile" ,
-                element: <PrivateRoute><UserProfile /></PrivateRoute>,
             },
             
             {
