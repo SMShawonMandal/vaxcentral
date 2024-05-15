@@ -1,23 +1,38 @@
-import React, { useContext, useEffect, useState } from 'react'
-import DashBoardDrawer from '../../components/DashBoardDrawer'
-import LoginHeader from '../../components/LoginHeader'
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import { AuthContext } from '../../provider/AuthProvider';
-import Tablerow from '../../components/Tablerow';
-import OngoingTableRow from '../../components/OngoingTableRow';
-import CompletedTableRow from '../../components/CompletedTableRow';
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import axios from "axios";
+import CompletedTableRow from "../components/CompletedTableRow";
+import OngoingTableRow from "../components/OngoingTableRow";
+import { useParams } from "react-router-dom";
+import ChildVaccineRow from "../components/ChildVaccineRow";
+function ChildrenDashboard() {
 
+    const {name} = useParams()
 
-function UserDashboard() {
-
+    console.log( name)
     const [vaccines, setVaccines] = useState([])
     const [ongoingVaccines, setOngoingVaccines] = useState([])
     const [completed, setCompleted] = useState([])
+    const [children, setChildren] = useState(null)
     const user = useContext(AuthContext);
 
+    const nid = user?.user?.nidNumber
     console.log(user?.user?.nidNumber)
     //load vaccine data
+
+    useEffect(() => {
+        axios.get('http://localhost:5001/api/childrens')
+            .then((response) => {
+                console.log(response.data.data)
+                const filteredChildren = response.data.data.filter(child => child.childName === name);
+                console.log(filteredChildren);
+                setChildren(...filteredChildren)
+
+            })
+            .catch((error) => {
+                console.log('ami error:', error.response.data);
+            });
+    }, [])
 
     useEffect(() => {
         axios.get('http://localhost:5001/api/vaccines')
@@ -32,9 +47,9 @@ function UserDashboard() {
     }, [])
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/ongoing/${user?.user?.nidNumber}`)
+        axios.post(`http://localhost:5001/api/child/childOngoing`, {nid, name})
             .then((response) => {
-                console.log("Ongoing",response.data.data)
+                console.log("Ongoing", response.data.data)
                 setOngoingVaccines(response.data.data)
             })
             .catch((error) => {
@@ -44,7 +59,7 @@ function UserDashboard() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/completed/${user?.user?.nidNumber}`)
+        axios.get(`http://localhost:5001/api/childCompleted/${user?.user?.nidNumber}/${name}`)
             .then((response) => {
                 // console.log(response.data.data)
                 setCompleted(response.data.data)
@@ -53,12 +68,13 @@ function UserDashboard() {
                 console.log('ami error:', error.response.data);
             });
     }, [])
-    
 
+    console.log(children?.childName)
 
     // function tha takes the date of birth from date and calculate age
 
-    const dateString = user?.user.dob;
+    const dateString = children?.childDob;
+    // const {childName, childDob} = childrens
     const calculateAge = (dateString) => {
         const birthDate = new Date(dateString);
         const currentDate = new Date();
@@ -84,10 +100,9 @@ function UserDashboard() {
     // filter vaccines according to the age of the user
     const filteredVaccines = vaccines.filter(vaccine => vaccine.minimum_age <= age && vaccine.maximum_age >= age);
 
-    // console.log(filteredVaccines);
+    console.log(filteredVaccines);
 
-
-    
+    console.log("completed", completed)
 
 
     return (
@@ -151,7 +166,7 @@ function UserDashboard() {
                             </tr>
                         </thead>
                         <tbody>
-                            {filteredVaccines.map((vaccine, index) => <Tablerow key={vaccine._id} index={index} vaccine={vaccine} />)}
+                            {filteredVaccines.map((vaccine, index) => <ChildVaccineRow key={vaccine._id} index={index} vaccine={vaccine} children = {children} />)}
                         </tbody>
                     </table>
                 </div>
@@ -162,4 +177,4 @@ function UserDashboard() {
     )
 }
 
-export default UserDashboard
+export default ChildrenDashboard

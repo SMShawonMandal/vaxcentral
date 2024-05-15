@@ -5,6 +5,7 @@ import { AuthContext } from '../provider/AuthProvider'
 
 function Header() {
     const { user } = useContext(AuthContext)
+    console.log(user)
     const navbarlink = <>
         <NavLink
             to="/"
@@ -62,20 +63,33 @@ function Header() {
             FAQ
         </NavLink>
         {
-            user && <NavLink
-            to="/userdashboard"
-            style={({ isActive, isPending, isTransitioning }) => {
-                return {
-                    color: isActive ? "#4FB2E5" : "black",
+            user?.designation === "user" ? <NavLink
+                to="/userdashboard"
+                style={({ isActive, isPending, isTransitioning }) => {
+                    return {
+                        color: isActive ? "#4FB2E5" : "black",
 
-                    borderBottom: isActive ? "2px solid #4FB2E5 " : "",
-                    width: 40,
-                };
-            }}
-            className='pt-2 text-center  mr-2'
-        >
-            Dashboard
-        </NavLink>
+                        borderBottom: isActive ? "2px solid #4FB2E5 " : "",
+                        width: 40,
+                    };
+                }}
+                className='pt-2 text-center  mr-2'
+            >
+                Dashboard
+            </NavLink> : <NavLink
+                to="/employeedashboard"
+                style={({ isActive, isPending, isTransitioning }) => {
+                    return {
+                        color: isActive ? "#4FB2E5" : "black",
+
+                        borderBottom: isActive ? "2px solid #4FB2E5 " : "",
+                        width: 40,
+                    };
+                }}
+                className='pt-2 text-center  mr-2'
+            >
+                Dashboard
+            </NavLink>
         }
     </>
     return (

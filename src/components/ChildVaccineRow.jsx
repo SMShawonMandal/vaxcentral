@@ -3,10 +3,10 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 
-function Tablerow({ index, vaccine }) {
+function ChildVaccineRow({ index, vaccine, children }) {
     const { user } = useContext(AuthContext)
     // console.log(user)
-    const registeredVaccines = { name: user.fullName, phonenumber: user.mobileNumber, nid: user.nidNumber, disease_name: vaccine.disease_name, total_doses: vaccine.total_dose_number, completed_doses: 0, status: 'ongoing' }
+    const registeredVaccines = { name: children.childName, parentNid: user.nidNumber, disease_name: vaccine.disease_name, total_doses: vaccine.total_dose_number, completed_doses: 0, status: 'ongoing' }
 
 
     function handleRegistration(v) {
@@ -20,7 +20,7 @@ function Tablerow({ index, vaccine }) {
             confirmButtonText: "Yes, register"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.post('http://localhost:5001/api/ongoing', registeredVaccines)
+                axios.post('http://localhost:5001/api/childOngoing', registeredVaccines)
                     .then((response) => {
                         Swal.fire({
                             title: "Registered!",
@@ -65,4 +65,4 @@ function Tablerow({ index, vaccine }) {
     )
 }
 
-export default Tablerow
+export default ChildVaccineRow

@@ -79,7 +79,7 @@ function Signup() {
   return (
     <>
       <div className='lg:h-screen md:h-screen min-h-[950px] w-full flex justify-center items-center bg-gradient-to-b from-[#e0f2fa] to-white '>
-        <div className='lg:w-[552px] md:w-[400px] max-h-[800px] bg-white border-black border-[1px] rounded-xl py-10 px-10 flex flex-col gap-6'>
+        <div className='lg:w-[552px] md:w-[400px] max-h-[800px] bg-white shadow-2xl rounded-xl py-10 px-10 flex flex-col gap-6'>
           <div className=' text-center text-3xl font-bold'>
             <h1> Sign Up </h1>
           </div>
@@ -89,31 +89,31 @@ function Signup() {
               <label htmlFor=""> Full Name </label>
               <input type="text" 
               value={fullName} 
-              onChange={(e) => setFullName(e.target.value)} className='border-b-[1px] border-black bg-transparent focus:outline-none' required />
+              onChange={(e) => setFullName(e.target.value)} className='border-b-[1px] border-gray-400 bg-transparent focus:outline-none' required />
             </div>
             <div className='flex flex-col gap-4 '>
               <label htmlFor=""> NID Number </label>
               <input type="text"
                value={nidNumber} 
-               onChange={(e) => setNidNumber(e.target.value)} className='border-b-[1px] border-black bg-transparent focus:outline-none' pattern="[0-9]*" required />
+               onChange={(e) => setNidNumber(e.target.value)} className='border-b-[1px] border-gray-400 bg-transparent focus:outline-none' pattern="[0-9]*" required />
             </div>
             <div className='flex flex-col gap-4 '>
               <label htmlFor=""> Mobile Number </label>
               <input type="text"
                value={mobileNumber} 
-               onChange={(e) => setMobileNumber(e.target.value)} className='border-b-[1px] border-black bg-transparent focus:outline-none' pattern="[0-9]*" required />
+               onChange={(e) => setMobileNumber(e.target.value)} className='border-b-[1px] border-gray-400 bg-transparent focus:outline-none' pattern="[0-9]*" required />
             </div>
             <div className='flex flex-col gap-4 '>
               <label htmlFor=""> Date of Birth </label>
               <input type="date" 
               value={dob} 
-              onChange={(e) => setDob(e.target.value)} className='border-b-[1px] border-black bg-transparent focus:outline-none' required />
+              onChange={(e) => setDob(e.target.value)} className='border-b-[1px] border-gray-400 bg-transparent focus:outline-none' required />
             </div>
             <div className='flex flex-col gap-4 relative'>
               <label htmlFor=""> Password</label>
               <input type="password" 
               value={password} 
-              onChange={(e) => setPassword(e.target.value)} className='border-b-[1px] border-black bg-transparent focus:outline-none' required />
+              onChange={(e) => setPassword(e.target.value)} className='border-b-[1px] border-gray-400 bg-transparent focus:outline-none' required />
               {error && <div className="error-message text-[14px] w-52 border border-gray-600 p-2 rounded-md absolute top-[69px] left-7 bg-white ">{error}</div>}
             </div>
             {/* End of edited line */}

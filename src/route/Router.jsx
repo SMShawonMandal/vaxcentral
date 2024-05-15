@@ -19,6 +19,8 @@ import RegisterNew from "../pages/User/RegisterNew";
 import UserProfile from "../pages/User/UserProfile";
 import PrivateRoute from "./PrivateRoute";
 import EmployeeDashboard from "../pages/EmployeeDashboard";
+import Fourth from "../layout/Fourth";
+import ChildrenDashboard from "../pages/ChildrenDashboard";
 export const router = createBrowserRouter([
     {
 
@@ -80,10 +82,22 @@ export const router = createBrowserRouter([
                 path: "/profile" ,
                 element: <PrivateRoute><UserProfile /></PrivateRoute>,
             },
+            
+            {
+                path: "/childrenDashboard/:name",
+                element: <PrivateRoute><ChildrenDashboard></ChildrenDashboard></PrivateRoute>
+            }
+        ]
+        
+    },
+    {
+        path: '/',
+        element: <Fourth />,
+        children: [
             {
                 path: "/employeedashboard" ,
-                element: <PrivateRoute><EmployeeDashboard /></PrivateRoute>,
-            }
+                element:<PrivateRoute><EmployeeDashboard /></PrivateRoute>,
+            },
         ]
         
     },
