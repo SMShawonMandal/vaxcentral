@@ -292,8 +292,8 @@ function EmployeeList() {
                         </div>
                       )}
                       <button className='btn btn-sm btn-error text-white' ref={ref} onClick={() => {
-                        setUpdateInfo(user)
-                        handleDelete(user.nidNumber)
+                        setUpdateInfo(employee)
+                        handleDelete(employee.nidNumber)
                       }}>Delete</button>
                     </td>
                   </tr>

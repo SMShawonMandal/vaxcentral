@@ -32,7 +32,7 @@ function ChildrenDashboard() {
             .catch((error) => {
                 console.log('ami error:', error.response.data);
             });
-    }, [])
+    }, [children])
 
     useEffect(() => {
         axios.get('http://localhost:5001/api/vaccines')
@@ -44,7 +44,7 @@ function ChildrenDashboard() {
             .catch((error) => {
                 console.log('ami error:', error.response.data);
             });
-    }, [])
+    }, [vaccines])
 
     useEffect(() => {
         axios.post(`http://localhost:5001/api/child/childOngoing`, {nid, name})
@@ -55,7 +55,7 @@ function ChildrenDashboard() {
             .catch((error) => {
                 console.log('ami error:', error.response.data);
             });
-    }, [])
+    }, [ongoingVaccines])
 
 
     useEffect(() => {
@@ -67,7 +67,7 @@ function ChildrenDashboard() {
             .catch((error) => {
                 console.log('ami error:', error.response.data);
             });
-    }, [])
+    }, [completed])
 
     console.log(children?.childName)
 

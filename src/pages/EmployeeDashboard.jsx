@@ -82,7 +82,7 @@ function EmployeeDashboard() {
           <table className="table table-zebra bg-[#9daab1] w-[72%]">
             <thead>
               <tr className=''>
-                <th className='text-center text-[16px] font-bold text-black pl-10'>SL</th>
+                <th className='text-center text-[16px] font-bold text-black pl-10'>Child Name</th>
                 <th className='text-center text-[16px] font-bold text-black'>Vaccine Name</th>
                 <th className='text-center text-[16px] font-bold text-black'>No of Dose</th>
                 <th className='text-center text-[16px] font-bold text-black'>Select</th>
@@ -90,7 +90,7 @@ function EmployeeDashboard() {
             </thead>
             <tbody>
 
-              {childOngoing.length > 0 && childOngoing !== null ? parentsOngoing.map((vaccine, index) =>
+              {childOngoing.length > 0 && childOngoing !== null ? childOngoing.map((vaccine, index) =>
                 <ChildSearchRow key={index} index={index} ongoing={vaccine}></ChildSearchRow>
               ) : <td colSpan={4} className='text-center text-lg'>No user found</td>
               }
