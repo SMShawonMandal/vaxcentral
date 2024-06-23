@@ -29,7 +29,7 @@ function UserDashboard() {
             .catch((error) => {
                 console.log('ami error:', error.response.data);
             });
-    }, [])
+    }, [vaccines])
 
     useEffect(() => {
         axios.get(`http://localhost:5001/api/ongoing/${user?.user?.nidNumber}`)
@@ -40,7 +40,7 @@ function UserDashboard() {
             .catch((error) => {
                 console.log('ami error:', error.response.data);
             });
-    }, [])
+    }, [ongoingVaccines])
 
 
     useEffect(() => {
@@ -52,7 +52,7 @@ function UserDashboard() {
             .catch((error) => {
                 console.log('ami error:', error.response.data);
             });
-    }, [])
+    }, [completed])
 
     // function tha takes the date of birth from date and calculate age
 
@@ -75,14 +75,14 @@ function UserDashboard() {
     };
 
     const age = calculateAge(dateString);
-    // console.log(age);
+    console.log(age);
 
     // console.log(user?.user.dob);
 
     // filter vaccines according to the age of the user
     const filteredVaccines = vaccines.filter(vaccine => vaccine.minimum_age <= age && vaccine.maximum_age >= age);
 
-    // console.log(filteredVaccines);
+    console.log(filteredVaccines, ongoingVaccines, completed);
 
 
 

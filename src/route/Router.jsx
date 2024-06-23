@@ -19,6 +19,15 @@ import PrivateRoute from "./PrivateRoute";
 import EmployeeDashboard from "../pages/EmployeeDashboard";
 import Fourth from "../layout/Fourth";
 import ChildrenDashboard from "../pages/ChildrenDashboard";
+import AdminDashboard from "../pages/Admin/AdminDashboard";
+import EmployeeList from "../pages/Admin/EmployeeList";
+import EmployeeManagement from "../pages/Admin/EmployeeManagement";
+import UserManagement from "../pages/Admin/UserManagement";
+import VaccineManagement from "../pages/Admin/VaccineManagement";
+import ChildrenManagement from "../pages/Admin/ChildrenManagement";
+import AdminRoute from "./AdminRoute";
+import EmployeeRoute from "./EmployeeRoute";
+import ComplainDashboard from "../pages/Admin/ComplainDashboard";
 export const router = createBrowserRouter([
     {
 
@@ -86,8 +95,37 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/employeedashboard" ,
-                element:<PrivateRoute><EmployeeDashboard /></PrivateRoute>,
+                element:<EmployeeRoute><EmployeeDashboard /></EmployeeRoute>,
             },
+            {
+                path: "/admindashboard",
+                element: <AdminRoute><AdminDashboard />      </AdminRoute>,
+            },
+            {
+                path: "/admin/employees",
+                element: <AdminRoute><EmployeeList /> </AdminRoute>,
+            },
+            {
+                path: "admin/employeeManagement",
+                element: <AdminRoute><EmployeeManagement /> </AdminRoute>,
+            },
+            {
+                path: "admin/userManagement",
+                element: <AdminRoute><UserManagement /> </AdminRoute>,
+            },
+            {
+                path: "admin/vaccineManagement",
+                element: <AdminRoute><VaccineManagement /> </AdminRoute>,
+            },
+            {
+                path: "admin/childrenManagement",
+                element: <AdminRoute><ChildrenManagement /> </AdminRoute>,
+            }
+            ,
+            {
+                path: "admin/complains",
+                element: <AdminRoute><ComplainDashboard /> </AdminRoute>,
+            }
         ]
         
     },

@@ -6,7 +6,7 @@ import axios from 'axios';
 function ChildVaccineRow({ index, vaccine, children }) {
     const { user } = useContext(AuthContext)
     // console.log(user)
-    const registeredVaccines = { name: children.childName, parentNid: user.nidNumber, disease_name: vaccine.disease_name, total_doses: vaccine.total_dose_number, completed_doses: 0, status: 'ongoing' }
+    const registeredVaccines = { name: children.childName, parentNid: user.nidNumber, disease_name: vaccine.disease_name, vaccine_name: vaccine.vaccine_name, total_doses: vaccine.total_dose_number, completed_doses: 0, status: 'ongoing' }
 
 
     function handleRegistration(v) {

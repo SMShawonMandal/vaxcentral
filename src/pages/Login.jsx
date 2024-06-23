@@ -44,6 +44,9 @@ function Login() {
               navigate('/employeeDashboard');
 
             }
+            else if (response.data.userData.designation === 'admin') {
+              navigate('/adminDashboard');
+            }
 
           }
         })

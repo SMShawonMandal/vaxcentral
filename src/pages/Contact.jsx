@@ -4,12 +4,14 @@ import ContactForm from '../components/ContactForm'
 import { AuthContext } from '../provider/AuthProvider';
 
 function Contact() {
-  const {dataToken} = useContext(AuthContext)
+  const { dataToken } = useContext(AuthContext)
   console.log(dataToken);
   return (
-    <div>
+    <div className='w-full pb-10 h-[100vh]'>
       <SectionBanner names='Contact' />
-      <ContactForm />
+      <div className='p-10'>
+        <ContactForm />
+      </div>
     </div>
 
   )

@@ -8,7 +8,7 @@ function Landing() {
     <div>
       <Banner />
       <LandingBody />
-    </div>
+  </div>
   )
 }
 

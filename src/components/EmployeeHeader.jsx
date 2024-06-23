@@ -11,7 +11,7 @@ function EmployeeHeader() {
     const { logout } = useContext(AuthContext)
     const { user } = useContext(AuthContext)
 
-    const handleLogout = async () => {
+    function handleLogout(){
         logout()
         Swal.fire({
             position: "top-center",
@@ -30,11 +30,18 @@ function EmployeeHeader() {
                 <Link to='/'>
                     <div className='flex w-full items-center justify-start gap-4'>
                         <img src={logo} />
-                        <h1 className=' text-3xl'>VaxCentral</h1>
+                        <h1 className=' text-3xl lg:flex md:flex hidden'>VaxCentral</h1>
                     </div>
                 </Link>
             </div>
-            <div className='navbar-end pr-5'>
+            <div className='navbar-end pr-5 flex gap-2'>
+                {
+                    user.designation === "admin" ? <Link to="/admindashboard">
+                    <button className='btn btn-sm btn-success text-white'> Dashboard </button>
+                </Link> : <Link to="/employeedashboard">
+                    <button className='btn btn-sm btn-success text-white'> Dashboard </button>
+                </Link>
+                }
                 <button className='btn btn-sm btn-primary ' onClick={handleLogout}> Logout </button>
             </div>
         </div>

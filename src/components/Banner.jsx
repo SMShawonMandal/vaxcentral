@@ -24,8 +24,8 @@ function Banner() {
             </div>
 
             {/* In this div svg */}
-            <div className='lg:h-[400px] md:h-[400px] sm:h-[300px] mt-8 mb-20'>
-                <Lottie animationData={animation2} loop={true} className='lg:h-[500px] lg:w-[500px] md:h-[400px] md:w-[400px] sm:h-[300px] sm:w-[300px] h-[300px] w-[300px]' />
+            <div className='h-full mt-8 mb-20  flex justify-center items-center'>
+                <Lottie animationData={animation2} loop={true} className='h-[300px] w-[400px] ' />
             </div>
         </div>
     )
