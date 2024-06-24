@@ -82,14 +82,7 @@ function ChildrenDashboard() {
         const yearDiff = currentDate.getFullYear() - birthDate.getFullYear();
         const monthDiff = currentDate.getMonth() - birthDate.getMonth();
         const dayDiff = currentDate.getDate() - birthDate.getDate();
-
-        let age = yearDiff;
-
-        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-            age--;
-        }
-
-        return age;
+        return yearDiff * 365 + monthDiff * 30 + dayDiff;
     };
 
     const age = calculateAge(dateString);

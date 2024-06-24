@@ -17,10 +17,18 @@ function VaccineManagement() {
 
         const vaccine_name = e.target.vaccineName.value;
         const disease_name = e.target.diseaseName.value;
-        const minimum_age = e.target.minAge.value;
+        const minyear = e.target.minyear.value;
+        const minmonth = e.target.minmonth.value;
+        const minweek = e.target.minweek.value;
+        const minday = e.target.minday.value;
+        const maxyear = e.target.maxyear.value;
+        const maxmonth = e.target.maxmonth.value;
+        const maxweek = e.target.maxweek.value;
+        const maxday = e.target.maxday.value;
+        const minimum_age = parseInt(minyear) * 365 + parseInt(minmonth) * 30 + parseInt(minweek) * 7 + parseInt(minday);
         const total_dose_number = e.target.totalDose.value;
-        const maximum_age = e.target.maxAge.value;
-        const gap = e.target.gap.value;
+        const maximum_age = parseInt(maxyear) * 365 + parseInt(maxmonth) * 30 + parseInt(maxweek) * 7 + parseInt(maxday);
+        console.log(minimum_age, maximum_age)
 
         const gaps = fieldValues.map((item, index) => { return item; })
         console.log(gaps)
@@ -97,8 +105,8 @@ function VaccineManagement() {
 
 
             {isModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-gray-400 bg-opacity-50 w-full z-20">
-                    <div className="bg-white p-8 rounded-lg shadow-lg lg:w-[50%] md:w-[60%] w-[70%]  h-[500px]  ">
+                <div className="fixed inset-0 flex items-center justify-center bg-gray-400 bg-opacity-50 w-full z-20 py-6">
+                    <div className="bg-white p-8 rounded-lg shadow-lg lg:w-[50%] md:w-[60%] w-[90vw]  lg:h-[500px]  md:h-[500px] h-screen ">
 
                         {/* form for edit the vaccine details */}
                         <h2 className="text-2xl font-semibold mb-4 text-gray-700">Edit vaccine</h2>
@@ -106,9 +114,9 @@ function VaccineManagement() {
                         <form onSubmit={(e) => handleVaccineAdd(e)}>
 
 
-                            <div className='flex gap-2'>
+                            <div className='w-full flex lg:flex-row md:flex-row flex-col gap-2'>
                                 {/* Vaccine name */}
-                                <div className="w-1/2 mb-4">
+                                <div className="lg:w-1/3 md:w-1/3 ">
                                     <label className="block text-gray-700">Vaccine Name</label>
                                     <input
                                         type="text"
@@ -118,7 +126,7 @@ function VaccineManagement() {
                                 </div>
 
                                 {/* Disease Name */}
-                                <div className="w-1/2 mb-4">
+                                <div className="lg:w-1/3 md:w-1/3 ">
                                     <label className="block text-gray-700">Disease Name</label>
                                     <input
                                         type="text"
@@ -126,13 +134,8 @@ function VaccineManagement() {
                                         className="w-full p-2 border border-gray-300 rounded-md"
                                     />
                                 </div>
-                            </div>
-
-
-
-                            <div className='flex gap-2'>
-                                {/* total dose number */}
-                                <div className="w-1/3 mb-4">
+                                 {/* total dose number */}
+                                 <div className="lg:w-1/3 md:w-1/3 ">
                                     <label className="block text-gray-700">Total Dose</label>
                                     <input
                                         type="number"
@@ -141,34 +144,87 @@ function VaccineManagement() {
                                         className="w-full p-2 border border-gray-300 rounded-md"
                                     />
                                 </div>
+                            </div>
 
 
+
+                            <div className='w-full flex lg:flex-row flex-col gap-6 pb-4'>
                                 {/* minimum age */}
-                                <div className="w-1/3 mb-4">
+                                <div className="lg:w-1/2 flex flex-col h-12">
                                     <label className="block text-gray-700">Minimum Age</label>
+                                    <div className='flex gap-2'>
                                     <input
                                         type="number"
-                                        name='minAge'
+                                        name='minyear'
+                                        placeholder='year'
+                                        required
                                         className="w-full p-2 border border-gray-300 rounded-md"
                                     />
+                                    <input
+                                        type="number"
+                                        name='minmonth'
+                                        placeholder='month'
+                                        required
+                                        className="w-full p-2 border border-gray-300 rounded-md"
+                                    />
+                                    <input
+                                        type="number"
+                                        name='minweek'
+                                        placeholder='week'
+                                        required
+                                        className="w-full p-2 border border-gray-300 rounded-md"
+                                    />
+                                    <input
+                                        type="number"
+                                        name='minday'
+                                        required
+                                        placeholder='day'
+                                        className="w-full p-2 border border-gray-300 rounded-md"
+                                    />
+                                    </div>
                                 </div>
                                 {/* maximum age */}
-                                <div className="w-1/3 mb-4">
+                                <div className="lg:w-1/2 flex flex-col h-12">
                                     <label className="block text-gray-700">Maximum Age</label>
+                                    <div className='flex gap-2'>
                                     <input
                                         type="number"
-                                        name='maxAge'
+                                        name='maxyear'
+                                        placeholder='year'
+                                        required
                                         className="w-full p-2 border border-gray-300 rounded-md"
                                     />
+                                    <input
+                                        type="number"
+                                        name='maxmonth'
+                                        placeholder='month'
+                                        required
+                                        className="w-full p-2 border border-gray-300 rounded-md"
+                                    />
+                                    <input
+                                        type="number"
+                                        name='maxweek'
+                                        placeholder='week'
+                                        required
+                                        className="w-full p-2 border border-gray-300 rounded-md"
+                                    />
+                                    <input
+                                        type="number"
+                                        name='maxday'
+                                        placeholder='day'
+                                        required
+                                        className="w-full p-2 border border-gray-300 rounded-md"
+                                    />
+                                    </div>
                                 </div>
 
                             </div>
 
 
 
-                            <div className='flex flex-wrap gap-2 items-center'>
+                            <div className='flex flex-wrap gap-2 items-center mt-4'>
                                 {/* first gap */}
-                                {totalFiels.length > 0 ? totalFiels.map((el, index) => <div key={index} className="w-1/3 mb-4">
+                                {totalFiels.length > 0 ? totalFiels.map((el, index) => <div key={index} className="w-1/3 mb-2">
                                     <label className="block text-gray-700">Gap {el + 1}</label>
                                     <input
                                         type="number"
