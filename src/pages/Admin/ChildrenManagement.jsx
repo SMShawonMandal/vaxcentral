@@ -12,7 +12,7 @@ function ChildrenManagement() {
   const handleSearch = (e) => {
     e.preventDefault()
     const searchString = e.target.search.value
-    axios.post(`http://localhost:5001/api/admin/children`, { searchString })
+    axios.post(`https://vaxcentralserver.vercel.app/api/admin/children`, { searchString })
       .then((response) => {
         console.log(response.data.data)
         setChildrens(response.data.data)
@@ -33,7 +33,7 @@ function ChildrenManagement() {
     const dob = e.target.dob.value;
     const parentNid = nid;
 
-    axios.patch('http://localhost:5001/api/admin/children/edit', {
+    axios.patch('https://vaxcentralserver.vercel.app/api/admin/children/edit', {
       searchChild: updateInfo.childName,
       childName,
       childGender,
@@ -87,7 +87,7 @@ function ChildrenManagement() {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        axios.delete(`http://localhost:5001/api/admin/children/delete/${nid}/${childrenName}`)
+        axios.delete(`https://vaxcentralserver.vercel.app/api/admin/children/delete/${nid}/${childrenName}`)
           .then((response) => {
             if (response) {
               Swal.fire({

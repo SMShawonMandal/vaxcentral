@@ -20,7 +20,7 @@ function ContactForm() {
         console.log('submitting form')
 
         try {
-            await axios.post('http://localhost:5001/api/contact', {
+            await axios.post('https://vaxcentralserver.vercel.app/api/contact', {
                 name: name,
                 email: email,
                 message: message,

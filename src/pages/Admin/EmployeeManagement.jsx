@@ -21,7 +21,7 @@ function EmployeeManagement(){
   
       console.log('Employee added');
   
-      axios.post('http://localhost:5001/api/admin/employee/add', {
+      axios.post('https://vaxcentralserver.vercel.app/api/admin/employee/add', {
         fullName,
         nidNumber,
         mobileNumber,

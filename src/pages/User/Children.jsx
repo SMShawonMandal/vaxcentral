@@ -15,7 +15,7 @@ function Children() {
   console.log(user)
 
   useEffect(() => {
-    axios.get('http://localhost:5001/api/childrens')
+    axios.get('https://vaxcentralserver.vercel.app/api/childrens')
       .then((response) => {
         setChildren(response.data.data)
         // console.log(response.data.data)
@@ -37,7 +37,7 @@ function Children() {
     const childCertificate = e.target.childCertificate.value;
     console.log(childName, childGender, childDob, childCertificate);
 
-    axios.post('http://localhost:5001/api/childrens', {
+    axios.post('https://vaxcentralserver.vercel.app/api/childrens', {
 
       childName,
       childGender,

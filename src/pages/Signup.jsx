@@ -33,7 +33,7 @@ function Signup() {
     else {
       try {
         // Make POST request to your backend endpoint
-        const response = await axios.post('http://localhost:5001/api/signup', {
+        const response = await axios.post('https://vaxcentralserver.vercel.app/api/signup', {
           fullName,
           nidNumber,
           mobileNumber,

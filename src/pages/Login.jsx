@@ -19,7 +19,7 @@ function Login() {
     console.log(mobileNumber, password)
 
     try {
-      await axios.post('http://localhost:5001/api/login', {
+      await axios.post('https://vaxcentralserver.vercel.app/api/login', {
         mobileNumber,
         password,
       })

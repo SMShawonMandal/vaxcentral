@@ -203,7 +203,8 @@ function Header() {
             >
                 FAQ
             </NavLink>
-            <NavLink
+            {
+                user && <NavLink
                 to={getDashboardLink()}
                 style={({ isActive }) => ({
                     color: isActive ? "#4FB2E5" : "black",
@@ -214,6 +215,7 @@ function Header() {
             >
                 Dashboard
             </NavLink>
+            }
         </>
     );
 

@@ -21,7 +21,7 @@ function ChildrenDashboard() {
     //load vaccine data
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/childrens')
+        axios.get('https://vaxcentralserver.vercel.app/api/childrens')
             .then((response) => {
                 console.log(response.data.data)
                 const filteredChildren = response.data.data.filter(child => child.childName === name);
@@ -35,7 +35,7 @@ function ChildrenDashboard() {
     }, [children])
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/vaccines')
+        axios.get('https://vaxcentralserver.vercel.app/api/vaccines')
             .then((response) => {
                 // console.log(response.data.data)
                 setVaccines(response.data.data)
@@ -47,7 +47,7 @@ function ChildrenDashboard() {
     }, [vaccines])
 
     useEffect(() => {
-        axios.post(`http://localhost:5001/api/child/childOngoing`, {nid, name})
+        axios.post(`https://vaxcentralserver.vercel.app/api/child/childOngoing`, {nid, name})
             .then((response) => {
                 console.log("Ongoing", response.data.data)
                 setOngoingVaccines(response.data.data)
@@ -59,7 +59,7 @@ function ChildrenDashboard() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/childCompleted/${user?.user?.nidNumber}/${name}`)
+        axios.get(`https://vaxcentralserver.vercel.app/api/childCompleted/${user?.user?.nidNumber}/${name}`)
             .then((response) => {
                 // console.log(response.data.data)
                 setCompleted(response.data.data)

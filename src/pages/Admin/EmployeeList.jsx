@@ -11,7 +11,7 @@ function EmployeeList() {
   console.log(updateInfo)
 
   useEffect(() => {
-    axios.get('http://localhost:5001/api/admin/employees')
+    axios.get('https://vaxcentralserver.vercel.app/api/admin/employees')
       .then((response) => {
         // console.log(response.data.data)
         setEmployees(response.data.data)
@@ -33,7 +33,7 @@ function EmployeeList() {
     const password = e.target.password.value;
     console.log(fullName, nidNumber, mobileNumber, dob, password);
 
-    axios.patch('http://localhost:5001/api/admin/employee/edit', {
+    axios.patch('https://vaxcentralserver.vercel.app/api/admin/employee/edit', {
       fullName,
       nidNumber,
       mobileNumber,
@@ -87,7 +87,7 @@ function EmployeeList() {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        axios.delete(`http://localhost:5001/api/admin/employee/delete/${nid}`)
+        axios.delete(`https://vaxcentralserver.vercel.app/api/admin/employee/delete/${nid}`)
           .then((response) => {
             if (response) {
               Swal.fire({
@@ -134,7 +134,7 @@ function EmployeeList() {
 
     console.log(searchStirng)
 
-    axios.get(`http://localhost:5001/api/admin/employee/search/${searchStirng}`)
+    axios.get(`https://vaxcentralserver.vercel.app/api/admin/employee/search/${searchStirng}`)
       .then((response) => {
         if (response.data.data !== null) {
           console.log(response.data.data)
@@ -151,7 +151,7 @@ function EmployeeList() {
   }
 
   function loadAllEmployeesData() {
-    axios.get('http://localhost:5001/api/admin/employees')
+    axios.get('https://vaxcentralserver.vercel.app/api/admin/employees')
       .then((response) => {
         // console.log(response.data.data)
         setEmployees(response.data.data)

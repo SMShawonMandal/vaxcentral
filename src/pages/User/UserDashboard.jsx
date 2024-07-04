@@ -20,7 +20,7 @@ function UserDashboard() {
     //load vaccine data
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/vaccines')
+        axios.get('https://vaxcentralserver.vercel.app/api/vaccines')
             .then((response) => {
                 // console.log(response.data.data)
                 setVaccines(response.data.data)
@@ -32,7 +32,7 @@ function UserDashboard() {
     }, [vaccines])
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/ongoing/${user?.user?.nidNumber}`)
+        axios.get(`https://vaxcentralserver.vercel.app/api/ongoing/${user?.user?.nidNumber}`)
             .then((response) => {
                 console.log("Ongoing", response.data.data)
                 setOngoingVaccines(response.data.data)
@@ -44,7 +44,7 @@ function UserDashboard() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/completed/${user?.user?.nidNumber}`)
+        axios.get(`https://vaxcentralserver.vercel.app/api/completed/${user?.user?.nidNumber}`)
             .then((response) => {
                 // console.log(response.data.data)
                 setCompleted(response.data.data)

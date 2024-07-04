@@ -14,7 +14,7 @@ function SearchBar() {
         console.log('submitting Guest Dob')
 
         try {
-            axios.post('http://localhost:5001/api/guest', {
+            axios.post('https://vaxcentralserver.vercel.app/api/guest', {
                 guestDob: guestDob
             })
                 .then((response) => {

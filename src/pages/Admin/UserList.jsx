@@ -10,7 +10,7 @@ function UserList() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:5001/api/admin/users')
+    axios.get('https://vaxcentralserver.vercel.app/api/admin/users')
       .then((response) => {
         // console.log(response.data.data)
         setusers(response.data.data)
@@ -32,7 +32,7 @@ function UserList() {
     const password = e.target.password.value;
     console.log(fullName, nidNumber, mobileNumber, dob, password);
 
-    axios.patch('http://localhost:5001/api/admin/user/edit', {
+    axios.patch('https://vaxcentralserver.vercel.app/api/admin/user/edit', {
       fullName,
       nidNumber,
       mobileNumber,
@@ -50,7 +50,7 @@ function UserList() {
           timer: 1500,
         });
         setTimeout(() => {
-            axios.get('http://localhost:5001/api/admin/users')
+            axios.get('https://vaxcentralserver.vercel.app/api/admin/users')
             .then((response) => {
               // console.log(response.data.data)
               setusers(response.data.data)
@@ -93,7 +93,7 @@ function UserList() {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        axios.delete(`http://localhost:5001/api/admin/user/delete/${nid}`)
+        axios.delete(`https://vaxcentralserver.vercel.app/api/admin/user/delete/${nid}`)
           .then((response) => {
             if (response) {
               Swal.fire({
@@ -140,7 +140,7 @@ function UserList() {
 
     console.log(searchStirng)
 
-    axios.get(`http://localhost:5001/api/admin/user/search/${searchStirng}`)
+    axios.get(`https://vaxcentralserver.vercel.app/api/admin/user/search/${searchStirng}`)
       .then((response) => {
         if (response.data.data !== null) {
           console.log(response.data.data)
@@ -157,7 +157,7 @@ function UserList() {
   }
 
   function loadAllUsersData() {
-    axios.get('http://localhost:5001/api/admin/users')
+    axios.get('https://vaxcentralserver.vercel.app/api/admin/users')
       .then((response) => {
         // console.log(response.data.data)
         setusers(response.data.data)

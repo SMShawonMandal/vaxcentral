@@ -8,8 +8,8 @@ function LandingBody() {
             <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-10 justify-center justify-items-center'>
                 <ProcessCard sl='1' title='Select Vaccine' description='Select the vaccine you want.' />
                 <ProcessCard sl='2' title='Registration' description=' in person at the vaccination center on the specified date with the vaccine card.' />
-                <ProcessCard sl='3' title='SMS / Email Notification' description='After registering online, you will receive a text message/email on your mobile phone' />
-                <ProcessCard sl='4' title='Vaccine' description='You have to appear in person at the vaccination center on the specified date.' />
+                <ProcessCard sl='3' title='Notification' description='After registering online, you can go the nearest vaccination center' />
+                <ProcessCard sl='4' title='Vaccine' description='You have to appear in person at the vaccination center.' />
             </div>
         </div>
 

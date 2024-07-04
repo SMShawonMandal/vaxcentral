@@ -7,7 +7,7 @@ function SearchRow({ index, ongoing }) {
     const [gap, setGap] = useState(ongoing?.gaps)
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/api/vaccines/${ongoing.vaccine_name}`)
+        axios.get(`https://vaxcentralserver.vercel.app/api/vaccines/${ongoing.vaccine_name}`)
             .then((response) => {
                 console.log(response.data)
                 switch (ongoing.completed_doses) {
@@ -50,7 +50,7 @@ function SearchRow({ index, ongoing }) {
 
 
         }
-        axios.patch('http://localhost:5001/api/user/ongoing/vaccines', {
+        axios.patch('https://vaxcentralserver.vercel.app/api/user/ongoing/vaccines', {
             name: ongoing.name,
             nextDate: newDate,
             vaccine_name: ongoing.vaccine_name,

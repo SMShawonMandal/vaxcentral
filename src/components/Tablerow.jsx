@@ -20,7 +20,7 @@ function Tablerow({ index, vaccine }) {
             confirmButtonText: "Yes, register"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.post('http://localhost:5001/api/ongoing', registeredVaccines)
+                axios.post('https://vaxcentralserver.vercel.app/api/ongoing', registeredVaccines)
                     .then((response) => {
                         Swal.fire({
                             title: "Registered!",

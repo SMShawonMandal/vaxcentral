@@ -12,7 +12,7 @@ function VaccineList({ allVaccines }) {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5001/api/vaccines')
+        axios.get('https://vaxcentralserver.vercel.app/api/vaccines')
             .then((response) => {
                 // console.log(response.data.data)
                 setVaccines(response.data.data)
@@ -37,7 +37,7 @@ function VaccineList({ allVaccines }) {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5001/api/admin/vaccine/delete/${vaccineName}`)
+                axios.delete(`https://vaxcentralserver.vercel.app/api/admin/vaccine/delete/${vaccineName}`)
                     .then((response) => {
                         if (response) {
                             Swal.fire({
@@ -103,15 +103,8 @@ function VaccineList({ allVaccines }) {
                                         <td className='capitalize w-40'>{vaccine?.vaccine_name}</td>
                                         <td className='capitalize w-56'>{vaccine?.disease_name}</td>
                                         <td>{vaccine?.total_dose_number}</td>
-                                        <td>{vaccine?.minimum_age} - {vaccine?.maximum_age} year</td>
+                                        <td>{vaccine?.minimum_age} - {vaccine?.maximum_age} days </td>
                                         <td>{vaccine?.gaps?.join(',')}</td>
-                                        {/* <td><div className='flex gap-2'>
-                                            <p>{vaccine?.gaps[0] !== undefined ? vaccine?.gaps[0] : 0}</p>
-                                            <p>{vaccine?.gaps[1] !== undefined ? vaccine?.gaps-[1] : null}</p>
-                                            <p>{vaccine?.gaps[2] !== undefined ? vaccine?.gap-[2] : null}</p>
-                                            <p>{vaccine?.gaps[3] !== undefined ? vaccine?.gaps[3] : null}</p>
-                                            <p>{vaccine?.gaps[4] !== undefined ? vaccine?.gaps[4] : null}</p>
-                                        </div></td> */}
                                         <td className='flex gap-2 justify-center'>
                                             <button className='btn btn-sm btn-error text-white' ref={ref} onClick={() => {
                                                 setUpdateInfo(vaccine)

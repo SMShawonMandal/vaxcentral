@@ -51,7 +51,10 @@ export const router = createBrowserRouter([
                 path: "/faq",
                 element: <Faq />,
             },
+            
+
         ],
+        
     },
     {
 

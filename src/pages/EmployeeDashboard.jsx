@@ -11,19 +11,19 @@ function EmployeeDashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5001/api/user/search`, { userId });
+      const response = await axios.post(`https://vaxcentralserver.vercel.app/api/user/search`, { userId });
       console.log(response.data);
       
       if (response.data.data === null ) {
         setparentsOngoing([])
         setChildsOngoing([])
       }
-      const userOngoing = await axios.get(`http://localhost:5001/api/ongoing/${response.data.data.nidNumber}`)
+      const userOngoing = await axios.get(`https://vaxcentralserver.vercel.app/api/ongoing/${response.data.data.nidNumber}`)
       const nid = response.data.data.nidNumber
       console.log(userOngoing.data.data)
       setparentsOngoing(userOngoing.data.data)
 
-      axios.post(`http://localhost:5001/api/allChildsOngoing`, { nid })
+      axios.post(`https://vaxcentralserver.vercel.app/api/allChildsOngoing`, { nid })
         .then((response) => {
           console.log("Ongoing", response.data.data)
           setChildsOngoing(response.data.data)

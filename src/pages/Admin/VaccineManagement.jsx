@@ -33,7 +33,7 @@ function VaccineManagement() {
         const gaps = fieldValues.map((item, index) => { return item; })
         console.log(gaps)
 
-        axios.post('http://localhost:5001/api/admin/vaccine/add', {
+        axios.post('https://vaxcentralserver.vercel.app/api/admin/vaccine/add', {
             vaccine_name,
             disease_name,
             total_dose_number: parseInt(total_dose_number),

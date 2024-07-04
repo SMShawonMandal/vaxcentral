@@ -6,7 +6,7 @@ function ComplainDashboard() {
   const [complains, setComplains] = useState([])
 
   useEffect(() => {
-    axios.post('http://localhost:5001/api/admin/complains')
+    axios.post('https://vaxcentralserver.vercel.app/api/admin/complains')
       .then((response) => {
         // console.log(response.data.data)
         setComplains(response.data.data)
